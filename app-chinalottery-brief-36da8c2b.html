@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中彩网 · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f5f0eb;
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2e2e2e;
+      line-height: 1.7;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #fdfaf7;
+      padding: 2.8rem 2.5rem 3.2rem;
+      border-radius: 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2rem;
+      color: #3f2e1e;
+      border-left: 5px solid #b7a58a;
+      padding-left: 1.1rem;
+    }
+    .subhead {
+      font-size: 0.95rem;
+      color: #7b6e5e;
+      margin: 0.3rem 0 2rem 1.6rem;
+      border-bottom: 1px dashed #ddd6cb;
+      padding-bottom: 0.6rem;
+    }
+    .hero-tagline {
+      background: #eae2d7;
+      padding: 1rem 1.5rem;
+      border-radius: 14px;
+      font-size: 0.98rem;
+      color: #3f3122;
+      margin-bottom: 2.2rem;
+      border-left: 6px solid #8b7a66;
+    }
+    .hero-tagline strong {
+      font-weight: 600;
+      color: #4b3827;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 2.2rem 0 1rem 0;
+      color: #3f2e1e;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-title::before {
+      content: "▍";
+      color: #b19f88;
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.3rem;
+      margin: 1.2rem 0 1.8rem;
+    }
+    .card {
+      background: #f8f3ec;
+      border-radius: 16px;
+      padding: 1.1rem 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #eae1d6;
+    }
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #4f3a28;
+      margin-bottom: 0.4rem;
+    }
+    .card p {
+      font-size: 0.92rem;
+      color: #4f4338;
+      margin: 0;
+    }
+    .highlight-box {
+      background: #ede6dc;
+      border-radius: 18px;
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0 2rem;
+      border-left: 4px solid #a28d75;
+    }
+    .highlight-box p {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+    }
+    .highlight-box .label {
+      font-weight: 600;
+      color: #4c3826;
+      display: inline-block;
+      min-width: 5.5rem;
+    }
+    blockquote {
+      background: #f2ece3;
+      border-radius: 14px;
+      padding: 0.9rem 1.5rem;
+      margin: 1.5rem 0 1.8rem;
+      border-left: 5px solid #b8a58d;
+      font-style: normal;
+      color: #3e3329;
+      font-size: 0.95rem;
+    }
+    blockquote strong {
+      color: #3f2c1b;
+    }
+    .faq-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin: 1.2rem 0 2rem;
+    }
+    .faq-item {
+      border-bottom: 1px dashed #ddd1c2;
+      padding-bottom: 0.7rem;
+    }
+    .faq-item .q {
+      font-weight: 600;
+      color: #4d3a27;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .faq-item .a {
+      font-size: 0.92rem;
+      color: #5f5042;
+    }
+    .cta-sentence {
+      font-size: 1rem;
+      padding: 1.2rem 0 0.2rem;
+      border-top: 1px solid #e1d5c8;
+      margin-top: 1.8rem;
+    }
+    .cta-sentence a {
+      color: #6f563c;
+      text-decoration: none;
+      border-bottom: 1px solid #b6a087;
+      font-weight: 500;
+      transition: border 0.2s, color 0.2s;
+    }
+    .cta-sentence a:hover {
+      color: #3d2d1d;
+      border-bottom-color: #3d2d1d;
+    }
+    .meta-note {
+      margin-top: 2.5rem;
+      font-size: 0.82rem;
+      color: #8c7e6e;
+      background: #f3ede6;
+      padding: 0.7rem 1.2rem;
+      border-radius: 30px;
+      display: inline-block;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.8rem; }
+      .page { padding: 1.6rem 1.2rem; }
+      h1 { font-size: 1.6rem; padding-left: 0.8rem; }
+      .info-grid { grid-template-columns: 1fr; }
+      .hero-tagline { font-size: 0.9rem; padding: 0.8rem 1rem; }
+      .section-title { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>中彩网 · 知识库</h1>
+  <div class="subhead">再次访问 · 持续关注 · 信息索引</div>
+
+  <div class="hero-tagline">
+    <strong>▶ 目录式入口</strong> —— 这里不是单一页面，而是围绕<strong>“再次回到熟悉的地方”</strong>整理的一组参考要点。无论你是第几次打开，都建议先快速过一遍下方结构。
+  </div>
+
+  <!-- 说明区：站点定位 -->
+  <div class="section-title">说明 · 定位</div>
+  <p style="margin-bottom:0.6rem;">
+    <a href="https://app-chinalottery.com" style="color:#5f4833;text-decoration:none;border-bottom:1px solid #b7a087;">中彩网官网首页</a> 
+    本身是一个聚合型信息节点，承载彩票相关资讯、数据与官方动态。本知识库页面对应的是<strong>“再次访问场景”</strong>：当你收藏了地址、隔段时间回来，可以从这里快速了解站点结构、内容分类以及常见关注点。
+  </p>
+  <p style="color:#4f4236;">
+    以下内容按知识库逻辑组织，方便返回用户直接定位所需信息，减少重复浏览时间。
+  </p>
+
+  <!-- 特点 · 目录卡片 -->
+  <div class="section-title">信息组织特点</div>
+  <div class="info-grid">
+    <div class="card">
+      <h3>📋 结构化导航</h3>
+      <p>入口页采用分区索引，将新闻、数据、规则说明、公告等分块陈列，降低信息获取成本。</p>
+    </div>
+    <div class="card">
+      <h3>🔖 适老化收藏设计</h3>
+      <p>无论电脑端还是手机浏览器，页面均适配清晰排版，favicon 与标题便于从书签栏快速找回。</p>
+    </div>
+    <div class="card">
+      <h3>🔄 更新可预期</h3>
+      <p>内容依据官方节奏更新，建议每隔数日返回首页，了解最新摘要与提示。</p>
+    </div>
+    <div class="card">
+      <h3>📎 多端一致性</h3>
+      <p>从桌面大屏到移动小屏，核心区块与交互元素保持统一，降低再次访问的认知负担。</p>
+    </div>
+  </div>
+
+  <!-- 提示区：再次访问提醒 -->
+  <div class="highlight-box">
+    <p><span class="label">💡 再次访问提示</span> 若你已收藏 <strong>中彩网官网首页</strong>，每次回来可优先浏览：
+    <br>① 顶部公告栏（若有） ② 数据摘要区域 ③ 最新规则变动。这些模块通常放置在最显眼位置。</p>
+    <p><span class="label">📌 持续关注建议</span> 将页面添加到浏览器书签或手机主屏幕，并定期清理缓存，确保加载最新样式与内容。</p>
+  </div>
+
+  <!-- 相关信息区 FAQ 摘要 + 引用 -->
+  <div class="section-title">相关信息 · FAQ 摘要</div>
+  <div class="faq-summary">
+    <div class="faq-item">
+      <span class="q">Q：再次访问时页面与上次不同？</span>
+      <span class="a">首页区块可能根据运营需要调整顺序，核心栏目（新闻、数据、规则）始终存在，可横向滚动或通过主导航查找。</span>
+    </div>
+    <div class="faq-item">
+      <span class="q">Q：哪些内容适合长期关注？</span>
+      <span class="a">官方公告、玩法调整说明、历史数据汇总、以及首页“常见问题”板块，建议重点关注。</span>
+    </div>
+    <div class="faq-item">
+      <span class="q">Q：移动端阅读体验如何？</span>
+      <span class="a">页面采用响应式布局，在小屏幕下卡片和文字自动适配，也可横屏获取更宽视图。</span>
+    </div>
+  </div>
+  <blockquote>
+    <strong>▸ 引用说明</strong> —— “知识库的价值不仅在于初次获取，更在于再次返回时能够快速找到同一位置。” 本页面即为此理念而设计，围绕 <a href="https://app-chinalottery.com" style="color:#4f3826;text-decoration:underline;text-underline-offset:3px;">中彩网官网首页</a> 提供稳定的再次访问锚点。
+  </blockquote>
+
+  <!-- 自然嵌入链接的句子 -->
+  <div class="cta-sentence">
+    若你希望直接回到内容起点，可随时通过书签打开 <a href="https://app-chinalottery.com">中彩网官网首页</a>；本知识库页仅作为辅助索引，不替代主站功能。
+  </div>
+
+  <!-- 页面方向脚注 -->
+  <div class="meta-note">
+    📂 知识库入口式 · 目录感布局 · 版本 2311
+  </div>
+</div>
+</body>
+</html>
